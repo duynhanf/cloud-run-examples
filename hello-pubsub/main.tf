@@ -14,12 +14,14 @@ variable "build_roles_list" {
   description = "The list of roles that build needs for"
   type        = list(string)
   default = [
-    "roles/run.developer",
-    "roles/vpaccess.user",
+    "roles/cloudbuild.builds.editor",
+    "roles/run.admins",
+    "roles/iam.serviceAccountCreator",
+    "roles/resourcemanager.projectIamAdmin",
+    "roles/pubsub.editor",
     "roles/iam.serviceAccountUser",
-    "roles/run.admin",
-    "roles/secretmanager.secretAccessor",
-    "roles/artifactregistry.admin",
+    "roles/serviceusage.serviceUsageConsumer",
+    "roles/storage.admin"
   ]
 }
 
