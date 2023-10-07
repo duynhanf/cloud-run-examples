@@ -1,0 +1,8 @@
+steps:
+   - name: 'gcr.io/cloud-builders/docker'
+     args: [ 'build', '-t', '$_REGION-docker.pkg.dev/$PROJECT_ID/$_BASENAME-artifacts/hello', '.' ]
+   - name: 'gcr.io/cloud-builders/docker'
+     args: ['push', '$_REGION-docker.pkg.dev/$PROJECT_ID/$_BASENAME-artifacts/hello']
+substitutions:
+  _REGION: asia-northeast1
+  _BASENAME: pubsub
